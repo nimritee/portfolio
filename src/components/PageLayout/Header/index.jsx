@@ -38,13 +38,13 @@ export default () => {
               </Link>
             </li>
             <li className={style.navItem}>
-              <Link to="/contact" onClick={toggleMenu} activeClassName={style.anchorActive}>
-                Contact
+              <Link to="/blog" onClick={toggleMenu} activeClassName={style.anchorActive}>
+                Blog
               </Link>
             </li>
             <li className={style.navItem}>
-              <Link to="/blog" onClick={toggleMenu} activeClassName={style.anchorActive}>
-                Blog
+              <Link to="/project" onClick={toggleMenu} activeClassName={style.anchorActive}>
+                Project
               </Link>
             </li>
             <li className={style.navItem}>

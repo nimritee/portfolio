@@ -20,11 +20,11 @@ const DomContent = () => (
     <div className={style.profileAvatar} />
     <div className={`${style.name} centerAlign`}>
       <div className={`${style.boxName} centerAlign`}>
-        <h2>
-          Rolwin
+        <h3>
+          Nimritee
           {' '}
-          <span>Reevan</span>
-        </h2>
+          <span>Sirsalewala</span>
+        </h3>
       </div>
       <div className={`${style.badge} ${style.badgeGray}`}>Software Engineer</div>
       <div className="centerAlign box">
@@ -39,12 +39,12 @@ const DomContent = () => (
             <FeatherIcon size="19" icon="calendar" />
             {' '}
           </span>
-&nbsp; &nbsp; May 9,1995
+&nbsp; &nbsp; November 22,1997
         </li>
         <li className={`${style.contactBlockItem}`}>
           <span><FeatherIcon size="19" icon="map-pin" /></span>
           {' '}
-&nbsp; &nbsp; Bangalore, India
+&nbsp; &nbsp; Mumbai, India
         </li>
         <li className={`${style.contactBlockItem}`}>
           <span><FeatherIcon size="19" icon="mail" /></span>

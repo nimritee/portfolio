@@ -14,7 +14,7 @@ const SkillsProgress = () => (
         />
         <ProgressBar
           percent={95}
-          text="ReactJS"
+          text="PHP"
         />
         <ProgressBar
           percent={85}

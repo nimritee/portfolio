@@ -13,11 +13,11 @@ module.exports = {
     contact: 'contact',
     resume: 'resume',
     tag: 'tags',
-    project : 'project',
+    project: 'project',
   },
   social: {
     github: 'https://github.com/nimritee',
-    linkedin:'https://www.linkedin.com/in/nimritee/',
+    linkedin: 'https://www.linkedin.com/in/nimritee/',
     facebook: 'https://www.facebook.com/nimritee',
     twitter: 'https://twitter.com/nimritee',
     instagram: 'https://www.instagram.com/nimritee/',

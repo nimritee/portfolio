@@ -13,7 +13,6 @@ import PostCard from '../../components/PostCard';
 import SidebarWrapper from '../../components/PageLayout/Sidebar';
 import Config from '../../../config';
 import Utils from '../../utils/pageUtils';
-import style from './tags.module.less';
 
 const TagPage = ({ data, pageContext }) => {
   const { tag } = pageContext;
@@ -110,19 +109,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allFile(filter: { name: { eq: $tag }, dir: { regex: "/tags$/" } }) {
-      edges {
-        node {
-          name
-          childImageSharp {
-            fluid(maxHeight: 600) {
-              ...GatsbyImageSharpFluid_tracedSVG
-            }
-          }
-        }
-      }
     }
-  }
 `;
 
 export default TagPage;

@@ -4,43 +4,34 @@ import ProgressBar from '../../Progress';
 
 const SkillsProgress = () => (
   <div>
-    <h2>My Skills</h2>
+    <h2 className="titleSeparate">My Skills</h2>
     <Row gutter={[20, 20]}>
       <Col xs={24} sm={24} md={12}>
-
         <ProgressBar
-          percent={80}
-          text="Javascript"
+          percent={50}
+          text="Java"
         />
         <ProgressBar
-          percent={95}
+          percent={50}
           text="PHP"
         />
         <ProgressBar
-          percent={85}
+          percent={50}
           text="Gatsby"
-        />
-        <ProgressBar
-          percent={90}
-          text="NodeJS"
         />
       </Col>
       <Col xs={24} sm={24} md={12}>
         <ProgressBar
-          percent={70}
-          text="Python"
+          percent={50}
+          text="Selenium"
         />
         <ProgressBar
-          percent={90}
-          text="Mysql"
+          percent={50}
+          text="DevOps"
         />
         <ProgressBar
-          percent={78}
-          text="MongoDB"
-        />
-        <ProgressBar
-          percent={80}
-          text="Wordpress"
+          percent={50}
+          text="MySQL"
         />
       </Col>
     </Row>

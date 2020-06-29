@@ -8,31 +8,27 @@ const SkillsProgress = () => (
     <Row gutter={[20, 20]}>
       <Col xs={24} sm={24} md={12}>
         <ProgressBar
-          percent={50}
-          text="Java"
+          percent={85}
+          text="DB - MySql, Columnstore DB, SQL Server, Redshift"
         />
         <ProgressBar
-          percent={50}
-          text="PHP"
+          percent={80}
+          text="Automated Testing - Selenium, JMeter"
         />
         <ProgressBar
-          percent={50}
-          text="Gatsby"
+          percent={60}
+          text="Frontend Designing - Gatsby, React"
         />
       </Col>
       <Col xs={24} sm={24} md={12}>
-        <ProgressBar
-          percent={50}
-          text="Selenium"
-        />
-        <ProgressBar
-          percent={50}
-          text="DevOps"
-        />
-        <ProgressBar
-          percent={50}
-          text="MySQL"
-        />
+      <ProgressBar
+        percent={85}
+        text="Designing API and Scripting - Java, PHP, Python"
+      />
+      <ProgressBar
+        percent={60}
+        text="DevOps -  Docker, VSTS, CircleCI"
+      />
       </Col>
     </Row>
   </div>

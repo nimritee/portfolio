@@ -4,7 +4,7 @@ import AboutTile from '../../AbouTile';
 
 const Hobbies = () => (
     <div>
-        <br></br>
+        <br/>
         <h2 className="titleSeparate">My Interests</h2>
         <Row gutter={[20, 20]}>
         <Col xs={24} sm={24} md={12} lg={8}>

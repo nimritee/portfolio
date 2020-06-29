@@ -24,7 +24,7 @@ const AboutMe = () => {
         </p>
         <p dangerouslySetInnerHTML={domHtml(pageText.paraTwo)} />
         <p dangerouslySetInnerHTML={domHtml(pageText.paraThree)} />
-        <br/>
+        <br />
       </div>
     </>
   );

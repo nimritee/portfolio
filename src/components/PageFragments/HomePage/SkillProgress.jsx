@@ -21,14 +21,14 @@ const SkillsProgress = () => (
         />
       </Col>
       <Col xs={24} sm={24} md={12}>
-      <ProgressBar
-        percent={85}
-        text="Designing API and Scripting - Java, PHP, Python"
-      />
-      <ProgressBar
-        percent={60}
-        text="DevOps -  Docker, VSTS, CircleCI"
-      />
+        <ProgressBar
+          percent={85}
+          text="Designing API and Scripting - Java, PHP, Python"
+        />
+        <ProgressBar
+          percent={60}
+          text="DevOps -  Docker, VSTS, CircleCI"
+        />
       </Col>
     </Row>
   </div>

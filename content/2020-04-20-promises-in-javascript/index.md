@@ -2,7 +2,7 @@
 title: Working with promises in Javascript
 tags: [ javascript, typescript, nodejs, reactjs ]
 date: 2020-04-20T05:25:44.226Z
-path: blog/promises-in-javascript
+path: /promises-in-javascript
 cover: ./javascript.png
 excerpt: Let's talk about promises in javascript. What exactly is a promise in javascript and how to handle promises. This article will talk about the different methods to resolve promises.  
 ---

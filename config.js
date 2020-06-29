@@ -9,8 +9,7 @@ module.exports = {
   disqusScript: process.env.DISQUS_SCRIPT || 'https://rolwinreevan.disqus.com/embed.js',
   pages: {
     home: '/',
-    blog: 'blog',
-    contact: 'contact',
+    blog: '/',
     project: 'project',
   },
   social: {
@@ -21,6 +20,5 @@ module.exports = {
     instagram: 'https://www.instagram.com/nimritee/',
     rss: '/rss.xml',
   },
-  contactFormUrl: process.env.CONTACT_FORM_ENDPOINT || 'https://getform.io/f/09a3066f-c638-40db-ad59-05e4ed71e451',
   googleAnalyticTrackingId: process.env.GA_TRACKING_ID || '',
 };

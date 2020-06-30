@@ -35,10 +35,10 @@ exports.createPages = ({ actions, graphql }) => {
       }
 
       createPage({
-        path: node.frontmatter.path,
+        path: node.path,
         component: path.resolve('src/templates/post/post.jsx'),
         context: {
-          postPath: node.frontmatter.path,
+          postPath: node.path,
           translations: utils.getRelatedTranslations(node, allMarkdownRemark.edges),
         },
       });

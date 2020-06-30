@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import { Layout, Row, Col } from 'antd';
 import Header from '../../components/PageLayout/Header';
@@ -37,14 +36,6 @@ const Project = ({ data }) => (
     </Layout>
   </Layout>
 );
-
-Project.propTypes = {
-  data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
-    }).isRequired,
-  }).isRequired,
-};
 
 export const query = graphql`
   {

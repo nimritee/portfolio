@@ -15,7 +15,7 @@ module.exports = {
   social: {
     github: 'https://github.com/nimritee',
     linkedin: 'https://www.linkedin.com/in/nimritee/',
-    facebook: 'https://www.facebook.com/nimritee',
+    //facebook: 'https://www.facebook.com/nimritee',
     twitter: 'https://twitter.com/nimritee',
     instagram: 'https://www.instagram.com/nimritee/',
     rss: '/rss.xml',

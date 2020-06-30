@@ -17,11 +17,10 @@ const Hobbies = () => (
       </Col>
       <Col xs={24} sm={24} md={12} lg={8}>
         <AboutTile
-          className="hobbies_class"
-          img="swimming.png"
+          img="swimming.jpeg"
           alt="swimming image"
           textH4="Love Swimming"
-          textH3="At times"
+          textH3="Swimming + Me = Relaxation"
         />
       </Col>
       <Col xs={24} sm={24} md={12} lg={8}>
@@ -29,7 +28,7 @@ const Hobbies = () => (
           img="car.png"
           alt="car image"
           textH4="Love Driving"
-          textH3="Therapy of life"
+          textH3="Driving + Me = Fun"
         />
       </Col>
     </Row>

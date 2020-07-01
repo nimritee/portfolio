@@ -1,192 +1,167 @@
 ---
-title: 5 useful CSS trciks with images
+title: 5 Useful CSS tricks with images
 tags: [ html, css ]
 date: 2020-05-21T05:25:44.226Z
 path: blog/cssTricks
-cover: ./cssHero.jpeg
+cover: ./cssHero.png
 excerpt: Simple CSS techniques with images that would help you develop web pages attractive and faster. These include background-repeat, mask-image, zoom on hover,scroll-snap-type, and shape-outside.
 ---
+*This article shares some of my most pleasing moments of learning CSS, I hope it's the same for you as well.*
 
+CSS is an abbreviated form of Cascading Style Sheet. It is used to describe how HTML elements should be displayed. CSS can not only provide colors, positions to the HTML elements, etc., but it can also create animations and enhance your web page. It's totally worth to know some useful tips and tricks which will help you to create amazing web pages.
+
+## 1. background-repeat
+
+<img src="background-repeat.png" alt="" style="width:100px;height:100px;">
+<br>
+The <font color ="#905"> <span style="background-color:#e1e2e3">background-repeat</span></font> property sets how a background image will be repeated. It is used in conjunction with the background-image property. We can repeat the background image along the horizontal axis, vertical axis or not repeat it at all.
+
+*By default, a background-image is repeated both vertically and horizontally.*
+
+<b>Syntax</b>
+```CSS
+background-repeat: value; 
+```
+<br>
+<b>Property Values </b>
+<img src="PropertyValues.png" alt=""><br>
+
+<b>CSS Example</b>
+
+```CSS
+body {
+    background-image: url("images.png");
+    background-repeat: repeat;
+}
+```
+<i>You can view the source code<a href="https://github.com/nimritee/webpage_practices/tree/master/cssTricks/background-repeat" target="_blank"> here</a></i>.
+
+## 2. mask-image
 
 ![](./linear.png)
 
-![Software Testing](./TestingHero.png)
-### Is Software Testing important?
-Yes, Software Testing is an important phase of the Software Development Life Cycle (SDLC). 
+Let's say you want to use an image, but only want to show certain parts of it. You can achieve this using the <font color ="#905"><span style="background-color:#e1e2e3">mask-image</span></font> property. CSS masking allows us to define a mask shape which is then applied to the image. Anything that comes outside the mask shape is cut out, and the rest is displayed. It is pretty much works the same as masking in Photoshop.
 
-### Why?
-<b>Problem statement:</b>
-1. Companies are expecting shorter release cycles to deliver new functionalities.
-2. Provide stable and bug-free products to the customers.
-3. Meet the expectations of customers by delivering the feature in short intervals.
-4. Following the Agile development, we need to fix the issues at the earliest.
-5. Make a fool proof system.
-6. Shift left model (Testing should begin at the very early stage of SDLC).
+*Anything that’s 100% black in the image mask will be completely visible, anything that’s 100% transparent will be completely hidden, and anything in-between will be partially masked in the image.*
 
-### Example
-(**Note**: Social Media platform examples will be used for explaining.)<br>
-You download a social media application and try to “Sign Up” and an “Error” message shows up. Because of that same problem, none of the users could “Sign Up” and use the application. Now they have already started losing their business as users cannot use the application and are facing the unresolved issue at the very start. Thus, users will go and find another similar application that works and probably will never return to the previous one because of the bad experience they had. <br>
+Masking can be performed in two ways, **Masking using Gradients** and **Masking with images**.<br>
 
-*A simple login test would have checked the system, database, and server avoiding such issues.* <br>
+<b>CSS Example - Linear Gradient Masking</b>
 
-(Assuming <font color ="#0080ff">test@test.com</font> user exist)
+```CSS
+#masked{
+-webkit-mask-image: linear-gradient(to bottom, transparent 5%, black 75%);
+mask-image: linear-gradient(to bottom, transparent 5%, black 75%); 
+}
+```
+In the above image, 1st part is the original image and second part is masked image with linear-gradient.
 
-![Simple Login Test](./loginTest.png)
+<b>CSS Example - Radial Gradient Masking</b>
 
-### What are the different types of Testing?
+```CSS
+ #masked{
+-webkit-mask-image: radial-gradient(ellipse 20% 90% at 27% 50%, black 40%, transparent 50%);
+mask-image: radial-gradient(ellipse 20% 90% at 27% 50%, black 40%, transparent 50%);
+ }
+ ```
+ In the below image, 1st part is the original image and second part is masked image with radial-gradient.
 
-1. <b>Unit Tests</b><br>
-The purpose of Unit Testing is to validate that each unit of the software code performs as expected. It is performed during the development phase of an application by the developers. Unit Test isolates a section of code and verifies its correctness.<br>
-Ex: 
-    - Once a login component/ module is developed.
-    - Write all the test cases, regression tests which will validate the correctness of the module.
+![](./radial.png)
 
-2. <b>Integration Tests</b><br>
-The purpose of Integration Testing is to combine individual units and test them as a group. It is performed to expose faults in the interaction between the integrated units. For example, it can be testing the interaction with the database or making sure that microservices work together as expected.<br>
-Ex:
-    - Once a news feed component is developed.
-    - We will need to integrate it with Login as after login users will immediately land here.
-    - Testing of the integrated components and their interdependency should be checked so that it doesn’t break the code. 
+ <b>CSS Example - Masking with  Images</b>
+ ```CSS
+ #masked{
+ -webkit-mask-image: url(https://images.png);
+ mask-image: url(https://images.png);
+ }
+ ```
+ In the below example, a background image is used to mask an image in the selected camera cutout shape.
+ ![](./image.png)<br>
+<i>You can view the source code<a href="https://github.com/nimritee/webpage_practices/tree/master/cssTricks/mask-images" target="_blank"> here</a></i>.
 
-3. <b>Functional Tests</b><br>
-Functional Tests are used to validate the software system against functional requirements. The purpose of Functional Testing is to check the output of the system and not the intermediate states. The test would expect to get a specific value from the database as defined by the product requirements.<br>
-Ex:
-    - Once a search component is developed.
-    - We will type some characters in the search box.
-    - The result fetched should be relevant to the text searched.
+## 3. Zoom on hover
 
-4. <b>End-to-end Test</b><br>
-End-to-end testing replicates a user behavior to test whether the flow of an application right from start to finish is behaving as expected. The purpose of performing end-to-end tests is to identify system dependencies and to ensure that data integrity is maintained between various system components and systems.<br>
-The entire application is tested for functionalities such as communicating with the other systems, interfaces, databases, networks, and other applications.<br>
-Ex:
-    - This will cover all the pages, feature’s, and functionality.
-    - This should be performed before the code is pushed to the next stage, all the test cases have to be successful.
-
-5. <b>Compatibility Testing</b><br>
-Compatibility Testing is performed to assure that the web application is capable of running on different hardware, operating system, network environments. We need to test if the application is able to function properly in different types of browsers.<br>
-Ex:
-    - This testing will help us know that the application is working stable across all different operating systems and browsers.
-
-6. <b>Load Testing</b><br>
-A load test enables you to measure response times, throughput rates, resource-utilization levels and to identify your application’s breaking point, assuming that the breaking point occurs below the peak load condition.<br>
-Ex:
-    - Once the application is developed, it is necessary to know about the peak load condition the application can handle.
-    - Therefore, load testing should be performed to know about the application’s threshold value.
-
-### Why run tests manually which can be automated by the very machines we’re developing on? 
-![Manual Testing](./ManualTesting.png)
-
+ <div class=hover_apply>
+    <img src="zoom2.png" alt="">
+</div>
 <style>
-
-table.customTable td, table.customTable th {
-  border: 1px solid rgba(72, 94, 144, 0.16)
-}
-
-table.customTable thead {
-  background-color: #efefef;
-}
-
-td {
-  width: 25%;
-  padding: 0px;
-  padding-left: 5px !important;
-  vertical-align: baseline
-}
-th {
-    text-align: center;
+.hover_apply img:hover {
+    transform: scale(1.1);
 }
 </style>
+<br>
+A zoom effect on images when users hovers over them makes the web pages more attractive. This kind of effect can be used in galleries, selling products where you need to enlarge the image so that customers can have a better view.
 
-<table class="customTable">
-  <thead>
-    <tr>
-      <th>Parameter</th>
-      <th>Manual Testing</th>
-      <th>Automated Testing</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><i class="fab fa-lg fa-linkedin"></i>Accuracy</td>
-      <td>Manual Testing may not be accurate always.</td>
-      <td>Automated Testing is highly accurate as compared to manual testing.</td>
-    </tr>
-    <tr>
-      <td>Testing Time</td>
-      <td>Manual Testing is time consuming as the tester has to check everything manually.</td>
-      <td>Automated testing is faster as it operates on tools.</td>
-    </tr>
-    <tr>
-      <td>Reliability</td>
-      <td>Manual Testing is not very reliable, because of the human factor involved in it.</td>
-      <td>Automated testing is comparatively more reliable.</td>
-    </tr>
-    <tr>
-      <td>Regression Testing</td>
-      <td>Very time consuming & complicated process to do it manually.</td>
-      <td>Much easier with the help of tools.</td>
-    </tr>
-     <tr>
-      <td>Budget</td>
-      <td>Less expensive if considered for one time or short time goal.</td>
-      <td>Expensive as it requires tools yet reasonable for long term.</td>
-    </tr>
-  </tbody>
-</table>
+The CSS <font color ="#905"><span style="background-color:#e1e2e3">transform</span></font> property is used for enlargemnet of images with your selected scale amount.
 
-### What is Selenium?
-- Selenium is an open-source automated testing framework. It not only supports test scripts written in any user-preferred languages such as C#, Java, Perl, PHP, Python, and Ruby but also supports test case execution on multiple operating systems such as Windows, Linux, Android, and  Mac.
-- Selenium provides high testing flexibility to write advanced and complex test cases and allows tests to be carried out using any browser: Mozilla Firefox, Internet Explorer, Google Chrome, Safari, or Opera. 
-- Selenium can be integrated with TestNG and JUnit to generate test reports and manage test cases and with Jenkins, Docker, and Maven to attain continuous testing.
+ <b>Syntax</b>
+ ```CSS
+ transform: scale [transition-duration] [transition-timing-function] [transition-delay];
+ ```
 
-### Why is Selenium the Best Automation Testing Tool?
-1. Selenium has extensive features unlike other tools for example it provides cross browser testing.
-2. The purpose of testing is to compare the actual and expected output as well as the position of the elements in the UI.
-3. This will also make us validate that other parts of the system like API, DB, Network, etc, are responding correctly.
-4. Hence, Selenium can be used to perform different types of testing. Therefore, it removes the manual dependency of testers and the developers. So that they can run the script and validate all the steps themselves. This brings everything under one roof and makes it the most preferred and used tool for testing automation.
+ <b>CSS Example</b>
+ ```CSS
+img:hover {
+    transform: scale(1.1);
+}
+ ```
+In the above example, the image zooms in on hovering.
+<br>
 
-![Benefits of Selenium](./AutomatedTesting.png)
+<i>You can view the source code<a href="https://github.com/nimritee/webpage_practices/tree/master/cssTricks/zoom-on-hover" target="_blank"> here</a></i>.
 
-### Reporting in Selenium
-Without reporting, all the hard work that you put into writing and executing your test cases will be lost if there’s no way to track the information and communicate it with others in your team. Selenium doesn’t support report generation, but it’s easy enough to do with the right tools. Few reporting tools that can be used along with selenium are:
-- Selenium TestNG Report Generation
-- Selenium JUnit Report Generation
-- Selenium Extent Reports<br>
+## 4. scroll-snap-type
 
-*Apart from the reporting tools, email can be sent using an API call or slack notifications.*
+[](https://vimeo.com/419457225)
+[![Little red ridning hood]](https://vimeo.com/419457225 "Little red riding hood - Click to Watch!")
 
-### How frequently should testing be performed?
-Application testing should not only run before releasing a new feature but also it should run daily, within a period of 24 hours or 12 hours, depending on the organization.
+ <br>
 
-We should make our test cycle so flexible that we can split the tests into:
-1. <b>Login test</b><br>
-A Login test should run more frequently. Like after every 5 minutes or maximum up to an hour, as it's the most critical part of an application.
-
-2. <b>Regression testing</b><br>
-Covers all different aspects of testing, edge cases, and functionality tests. This can run every day/ once every 3 days/ once every 7 days or as per the business requirements.
-
-3. <b>Integration testing</b><br>
-Only specific feature’s testing along with its dependencies are performed when needed.
-
-![Shift Left Model](./ShiftLeftModel.png)
-
-Referring to the above shift, now we have more time to resolve the discovered defects. That means if the tests are performed more often, we can find the defects sooner, thereby providing us more time to fix it. Thus, ensuring a smooth experience for the customers.
-Therefore, it is advised to perform early and frequent tests. This can be achieved if we configure our code to work in such a manner and make the test cases parameter driven.
-
-### Complete Process to be followed for Automating Test
-![Automated Process](./AutomatedProcess.png)
+CSS <font color ="#905"> <span style="background-color:#e1e2e3">scroll-snap-type</span></font> property allows the developer to create well-controlled scroll experiences. This property can be used in the gallery section of the web-page.
+Page scrolling in CSS is contolled by setting a <font color ="#905"> <span style="background-color:#e1e2e3">scroll-snap-type</span></font> property on a container element. . The scroll-snap-type decides scrolling has to be done i.e. either <b>x</b> or <b>y</b>.
 
 
-Today companies are looking for developers who can take part in software development and at the same time, handle testing of the developed software, these developers are known as SDET engineers.
+<b>Syntax</b>
+ ```CSS
+ scroll-snap-type: [none | x | y] [mandatory | proximity];
+ ```
+*The `mandatory` means the browser has to snap to a snap point whenever the user stops scrolling.*
+*The `proximity`  is less strict, it allows the browser to a snap point if it seems appropriate.* 
 
-![SDET Vrs QA](./QA_SDET.png)
 
-### Conclusion
+ <b>CSS Example</b>
+ ```CSS
+.y-scrolling {
+      scroll-snap-type: y mandatory;
+  }
+ ```
+ The above example shows, scroll-snap-type along Y axis with mandatory value. 
+<br>
 
-![Manual Testing Vrs Automation Testing](./Manual_Automation.png)
+<i>You can view the source code<a href="https://github.com/nimritee/webpage_practices/tree/master/cssTricks/snap-scroll-type" target="_blank"> here</a></i>.
 
-1. To speed up the process, automation is required. This is known as DevOps.
-2. Automation can save time, remove assumptions, and do wide test covers.
-3. Manual testing has to be shifted to automated testing.
-4. Automation can remove dependencies.
-5. Selenium should be used for automation because it covers the maximum test cases.
+## 5. shape-outside
+
+<img src="shape-outside.png" alt=""><br>
+
+<font color ="#905"> <span style="background-color:#e1e2e3">shape-outside</span></font> changes the shape of the items that are wrapped around it, instead of being restricted to a rectangular box.`shape-outside` allows to shape the content in order to fit the image.
+
+The <font color ="#905"> <span style="background-color:#e1e2e3">shape-outside</span></font>  property takes a basic shape and applies a shape function on the item. This property works only for <b>floated</b> elements.
+
+
+<b>Syntax</b>
+ ```CSS
+shape-outside: values;
+ ```
+<b>Values</b>
+
+ <b>CSS Example</b>
+ ```CSS
+img{
+    shape-outside: circle(85% at 10% 50%) border-box;  
+}
+ ```
+The above example shows, how the text is wrapped around the image using the circle function.
+<br>
+
+<i>You can view the source code<a href="https://github.com/nimritee/webpage_practices/tree/master/cssTricks/shape-outside" target="_blank"> here</a></i>.

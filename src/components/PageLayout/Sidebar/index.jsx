@@ -12,7 +12,7 @@ import Config from '../../../../config';
 
 const { Content } = Layout;
 const {
-  github, instagram, twitter, linkedin
+  github, instagram, twitter, linkedin,
 } = Config.social;
 
 const DomContent = () => (
@@ -37,8 +37,8 @@ const DomContent = () => (
         <li className={`${style.contactBlockItem}`}>
           <span>
             <FeatherIcon size="19" icon="calendar" />
-            {' '}
           </span>
+          {' '}
 &nbsp; &nbsp; November 22,1997
         </li>
         <li className={`${style.contactBlockItem}`}>
@@ -49,7 +49,7 @@ const DomContent = () => (
         <li className={`${style.contactBlockItem}`}>
           <span><FeatherIcon size="19" icon="phone" /></span>
           {' '}
-&nbsp; &nbsp; <a href="tel:+91 9930567052">+91 9930567052</a>
+          <a href="tel:+91 9930567052">+91 9930567052</a>
         </li>
         <li className={`${style.contactBlockItem}`}>
           <span><FeatherIcon size="19" icon="mail" /></span>

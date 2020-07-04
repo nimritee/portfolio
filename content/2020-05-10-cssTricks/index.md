@@ -111,10 +111,8 @@ In the above example, the image zooms in on hovering.
 <i>You can view the source code<a href="https://github.com/nimritee/webpage_practices/tree/master/cssTricks/zoom-on-hover" target="_blank"> here</a></i>.
 
 ## 4. scroll-snap-type
-
-[](https://vimeo.com/419457225)
-[![Little red ridning hood]](https://vimeo.com/419457225 "Little red riding hood - Click to Watch!")
-
+<p align=center>
+<iframe src="https://player.vimeo.com/video/419457225" width="640" height="276" frameborder="15" allow="autoplay; fullscreen" allowfullscreen></iframe>
  <br>
 
 CSS <font color ="#905"> <span style="background-color:#e1e2e3">scroll-snap-type</span></font> property allows the developer to create well-controlled scroll experiences. This property can be used in the gallery section of the web-page.

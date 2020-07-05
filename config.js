@@ -6,7 +6,6 @@ module.exports = {
   author: 'Nimritee',
   postsForArchivePage: 3,
   defaultLanguage: 'en',
-  disqusScript: process.env.DISQUS_SCRIPT || 'https://rolwinreevan.disqus.com/embed.js',
   pages: {
     home: '/',
     blog: 'blog',
@@ -17,7 +16,5 @@ module.exports = {
     linkedin: 'https://www.linkedin.com/in/nimritee/',
     twitter: 'https://twitter.com/nimritee',
     instagram: 'https://www.instagram.com/nimritee/',
-    rss: '/rss.xml',
   },
-  googleAnalyticTrackingId: process.env.GA_TRACKING_ID || '',
 };

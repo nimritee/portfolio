@@ -6,7 +6,7 @@ import style from './postCard.module.less';
 
 const PostCard = (props) => {
   const { data: { node: { frontmatter } } } = props;
-  const color = ["red","blue","green"];
+  const colorArray = {"testing":"magenta","automated testing":"red","selenium":"volcano","html":"orange","css":"gold"};
 
   return (
     <div className={style.postCard}>
@@ -23,26 +23,14 @@ const PostCard = (props) => {
             <span className={style.dateHolder}>{frontmatter ? moment(frontmatter.date).format('MMM Do YYYY') : ''}</span>
           </p>
           <p>{frontmatter ? frontmatter.excerpt : ''}</p>
-          {
-            color.map((color,i) =>  {
-              return <Tag color ={color} key  = {'color' - i }/>
-            })
-          }
-          ${frontmatter.tags.join(' #')}
 
           <p style={{ color: '#ce6d96', wordSpacing: '10px' }}>
             <div>
-              <Tag color="magenta">java</Tag>
-              <Tag color="red">css</Tag>
-              <Tag color="volcano">php</Tag>
-              <Tag color="orange">selenium</Tag>
-              <Tag color="gold">gold</Tag>
-              <Tag color="lime">lime</Tag>
-              <Tag color="green">green</Tag>
-              <Tag color="cyan">cyan</Tag>
-              <Tag color="blue">blue</Tag>
-              <Tag color="geekblue">geekblue</Tag>
-              <Tag color="purple">purple</Tag>
+              {
+                frontmatter.tags.map(function(innerData,index){
+                  return (<Tag color={colorArray[innerData]} index={innerData}>{innerData}</Tag>)
+                })
+              }
             </div>
           </p>
         </div>

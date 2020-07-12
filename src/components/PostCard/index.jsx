@@ -14,12 +14,10 @@ const PostCard = (props) => {
     <div className={style.postCard}>
       <Link to={`/${frontmatter.path}`}>
         <Row align="middle">
-          <Col Xs={24} sm={24} md={8} lg={8}>
-            {
-            frontmatter ? <img className={style.blogImg} src={frontmatter.cover.childImageSharp.fluid.src} /> : null
-          }          
+          <Col Xs={24} sm={24} md={24} lg={8}>
+            {frontmatter ? <img className={style.blogImg} src={frontmatter.cover.childImageSharp.fluid.src} /> : null}        
           </Col>
-          <Col xs={24} sm={24} md={16} lg={16}>
+          <Col xs={24} sm={24} md={24} lg={16}>
             <div className={style.mrTp20}>
               <h3>{frontmatter ? frontmatter.title : ''}</h3>
             </div>

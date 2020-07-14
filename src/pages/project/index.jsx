@@ -1,76 +1,52 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
-import { Layout, Row, Col } from 'antd';
+import { Layout } from 'antd';
+import { Link, graphql } from 'gatsby';
 import Header from '../../components/PageLayout/Header';
-import SidebarWrapper from '../../components/PageLayout/Sidebar';
-import PostCard from '../../components/Project';
-import SEO from '../../components/Seo';
 
-const Project = ({ data }) => (
-  <Layout className="outerPadding">
-    <Layout className="container">
-      <Header />
-      <SEO
-        title="Project"
-        description="I like blogging about various web technologies and other stuff related to
-          javascript and other trends like graphql, prisma etc. This blog expresses my views of various technologies
-          and scenarios I have come across in realtime."
-        path="project"
-      />
-      <SidebarWrapper>
-        <div className="marginTopTitle">
-          <h1 className="titleSeparate">Project</h1>
-        </div>
-        <Row gutter={[20, 20]}>
-          {
-            data.allMarkdownRemark && data.allMarkdownRemark.edges.map((val, key) => (
-              // eslint-disable-next-line react/no-array-index-key
-              <Col key={key} xs={24} sm={24} md={12} lg={8}>
-                <PostCard data={val} />
-              </Col>
-            ))
-          }
-        </Row>
-      </SidebarWrapper>
-    </Layout>
-  </Layout>
-);
-
-Project.propTypes = {
-  data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
-    }).isRequired,
-  }).isRequired,
-};
+import { Sidebar404 } from '../../components/PageLayout/Sidebar';
 
 export const query = graphql`
   {
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fileAbsolutePath: { regex: "/index.md$/" } }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            date
-            path
-            title
-            tags
-            excerpt
-            cover {
-              childImageSharp {
-                fluid(maxWidth: 288) {
-                  ...GatsbyImageSharpFluid_tracedSVG
-                }
-              }
-            }
-          }
+    file(base: { eq: "404.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 500) {
+          ...GatsbyImageSharpFluid_tracedSVG
         }
       }
     }
   }
 `;
 
-export default Project;
+export default ({ data }) => (
+  <Layout className="outerPadding">
+    <Layout className="container">
+      <Header />
+      <Sidebar404>
+        <>
+          <div>
+            <img
+              src={data.file.childImageSharp.fluid.src}
+              width="100%"
+              alt="404"
+            />
+          </div>
+          <div className={`textCenter`}>
+            <h1>This page was lost</h1>
+            <p>
+              The Page You are looking for isn’t available. Try to search again or use
+              the Go Back button below.
+            </p>
+            <Link to="/">
+              <div className={`centerAlign `}>
+                <div className>
+                  <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M401.4 224h-214l83-79.4c11.9-12.5 11.9-32.7 0-45.2s-31.2-12.5-43.2 0L89 233.4c-6 5.8-9 13.7-9 22.4v.4c0 8.7 3 16.6 9 22.4l138.1 134c12 12.5 31.3 12.5 43.2 0 11.9-12.5 11.9-32.7 0-45.2l-83-79.4h214c16.9 0 30.6-14.3 30.6-32 .1-18-13.6-32-30.5-32z" /></svg>
+                </div>
+                <span>Go Back</span>
+              </div>
+            </Link>
+          </div>
+        </>
+      </Sidebar404>
+    </Layout>
+  </Layout>
+);

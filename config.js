@@ -10,6 +10,7 @@ module.exports = {
     home: '/',
     blog: 'blog',
     project: 'project',
+    thesis:'thesis',
   },
   social: {
     github: 'https://github.com/nimritee',

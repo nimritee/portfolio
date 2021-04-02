@@ -35,21 +35,9 @@ const DomContent = () => (
       </div>
       <ul className={`box ${style.badge} contactBlock`}>
         <li className={`${style.contactBlockItem}`}>
-          <span>
-            <FeatherIcon size="19" icon="calendar" />
-          </span>
-          {' '}
-&nbsp; &nbsp; November 22,1997
-        </li>
-        <li className={`${style.contactBlockItem}`}>
           <span><FeatherIcon size="19" icon="map-pin" /></span>
           {' '}
 &nbsp; &nbsp; Mumbai, India
-        </li>
-        <li className={`${style.contactBlockItem}`}>
-          <span><FeatherIcon size="19" icon="phone" /></span>
-          {' '}
-          <a href="tel:+91 9930567052">+91 9930567052</a>
         </li>
         <li className={`${style.contactBlockItem}`}>
           <span><FeatherIcon size="19" icon="mail" /></span>

@@ -28,9 +28,9 @@ const PostCard = (props) => {
             <p>{frontmatter ? frontmatter.excerpt : ''}</p>
 
             <div className={style.linksHolder}>
-              <a href="../resume.pdf" download target="_blank">Download Report</a>
-              <a href="../resume.pdf" download target="_blank">Download PPT</a>
-              <a href="../resume.pdf" download target="_blank">Download Thesis</a>
+              <a href={`../${frontmatter.reportName}`} download target="_blank">Download Report</a>
+              <a href={`../${frontmatter.pptName}`} download target="_blank">Download PPT</a>
+              <a href={`../${frontmatter.thesisName}`} download target="_blank">Download Thesis</a>
             </div>
             {/* <p style={{ color: '#ce6d96', wordSpacing: '10px' }}>
               <div>

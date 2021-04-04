@@ -1,31 +1,46 @@
-@import (reference) '../../styles/index.less';
-
 .postCard{
-     margin-top: 20px;
-     
-    
-    .postCardImg{
-        width: 100%;
-        height: 164px;
-        background-repeat: no-repeat;
-        border-radius: 10px;
-        box-shadow: 1px 3px 16px #a7a7a7;
-        background-size: cover
-    }
-    .mrTp20{
-        margin-top: 20px
-    }
-    .dateHolder{
-        background: #ebbaa1;
-        color: white;
-        padding: 6px;
-        border-radius: 7px;
-        font-size: 11px
-    }
-    a{
-        color: rgba(0, 0, 0, 0.65);
-        &:hover{
-            color: rgba(0, 0, 0, 0.65);
+    margin-top: 20px;
+
+   .mrTp20{
+       margin-top: 20px;
+   }
+   
+   .dateHolder{
+       background: #ebbaa1;
+       color: white;
+       padding: 6px;
+       border-radius: 7px;
+       font-size: 11px
+   }
+   a{
+       color: rgba(0, 0, 0, 0.65);
+       &:hover{
+           color: rgba(0, 0, 0, 0.65);
+       }
+   }
+
+   .blogImg{
+       box-shadow: 1px 3px 16px #a7a7a7;
+       border-radius: 10px;
+   }
+   .linksHolder{
+        display: flex;
+        flex-direction: column;
+        a{
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            transition: all ease 0.3s;
+            &:hover{
+                color: #304CFD;
+            }
         }
-    }
+   }
 }
+
+@media only screen and (min-width: 768px) {
+  .postCard{
+   .blogImg{
+       max-width: 90%;
+   }
+  }
+ }

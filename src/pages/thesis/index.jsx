@@ -4,10 +4,10 @@ import { Layout, Row, Col } from 'antd';
 import Header from '../../components/PageLayout/Header';
 
 import SidebarWrapper from '../../components/PageLayout/Sidebar';
-import Project from '../../components/Project';
+import Thesis from '../../components/Thesis';
 import SEO from '../../components/Seo';
 
-const ProjectContainer = ({ data }) => (
+const ThesisContainer = ({ data }) => (
   <Layout className="outerPadding">
     <Layout className="container">
       <Header />
@@ -20,14 +20,14 @@ const ProjectContainer = ({ data }) => (
       />
       <SidebarWrapper>
         <div className="marginTopTitle">
-          <h1 className="titleSeparate">Project</h1>
+          <h1 className="titleSeparate">Thesis</h1>
         </div>
         <Row gutter={[20, 20]}>
           {
             data.allMarkdownRemark && data.allMarkdownRemark.edges.map((val, key) => (
               // eslint-disable-next-line react/no-array-index-key
-              <Col key={key} xs={24} sm={12} md={8} lg={8}>
-                <Project data={val} />
+              <Col key={key} xs={24}>
+                <Thesis data={val} />
               </Col>
             ))
           }
@@ -66,4 +66,4 @@ export const query = graphql`
   }
 `;
 
-export default ProjectContainer;
+export default ThesisContainer;

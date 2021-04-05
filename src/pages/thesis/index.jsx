@@ -6,6 +6,7 @@ import Header from '../../components/PageLayout/Header';
 import SidebarWrapper from '../../components/PageLayout/Sidebar';
 import Thesis from '../../components/Thesis';
 import SEO from '../../components/Seo';
+import thesisData from './thesis.json';
 
 const ThesisContainer = ({ data }) => (
   <Layout className="outerPadding">
@@ -24,10 +25,10 @@ const ThesisContainer = ({ data }) => (
         </div>
         <Row gutter={[20, 20]}>
           {
-            data.allMarkdownRemark && data.allMarkdownRemark.edges.map((val, key) => (
+            thesisData.length && thesisData.map((val, key) => (
               // eslint-disable-next-line react/no-array-index-key
               <Col key={key} xs={24}>
-                <Thesis data={val} />
+                <Thesis {...val} />
               </Col>
             ))
           }

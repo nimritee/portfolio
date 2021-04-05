@@ -6,8 +6,9 @@ import Header from '../../components/PageLayout/Header';
 import SidebarWrapper from '../../components/PageLayout/Sidebar';
 import Project from '../../components/Project';
 import SEO from '../../components/Seo';
+import projects from './projects.json';
 
-const ProjectContainer = ({ data }) => (
+const ProjectContainer = () => (
   <Layout className="outerPadding">
     <Layout className="container">
       <Header />
@@ -24,10 +25,10 @@ const ProjectContainer = ({ data }) => (
         </div>
         <Row gutter={[20, 20]}>
           {
-            data.allMarkdownRemark && data.allMarkdownRemark.edges.map((val, key) => (
+            projects.length && projects.map((val, key) => (
               // eslint-disable-next-line react/no-array-index-key
               <Col key={key} xs={24} sm={12} md={8} lg={8}>
-                <Project data={val} />
+                <Project {...val} />
               </Col>
             ))
           }

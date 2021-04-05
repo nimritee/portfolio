@@ -4,25 +4,25 @@ import { Link } from 'gatsby';
 import style from './project.module.less';
 
 const Project = (props) => {
-  const { data: { node: { frontmatter } } } = props;
+
   return (
     <div className={style.postCard}>
-      <Link to={`/${frontmatter.path}`}>
+      <Link to={`/${props.path}`}>
         <div
           className={style.postCardImg}
           style={{
-            backgroundImage: `url(${frontmatter ? frontmatter.cover.childImageSharp.fluid.src : ''})`,
+            backgroundImage: `url(${props.src})`,
           }}
         />
         <div className={style.mrTp20}>
           <p>
-            <span className={style.dateHolder}>{frontmatter ? moment(frontmatter.date).format('MMM Do YYYY') : ''}</span>
+            <span className={style.dateHolder}>{props.date ? moment(props.date).format('MMM Do YYYY') : ''}</span>
           </p>
-          <h3>{frontmatter ? frontmatter.title : ''}</h3>
-          <p>{frontmatter ? frontmatter.excerpt : ''}</p>
+          <h3>{props.title}</h3>
+          <p>{props.excerpt}</p>
           <p style={{ color: '#ce6d96', wordSpacing: '10px' }}>
             {
-                `#${frontmatter.tags.join(' #')}`
+                `#${props.tags.join(' #')}`
             }
           </p>
         </div>

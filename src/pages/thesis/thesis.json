@@ -1,18 +1,10 @@
 [
     {
-        "excerpt": "Software testing is imperative, as it controls the success rate and the growth of the business. I have gathered few business problems and tried answering the issues in this blogs, by focusing on Frontend Automated Testing using Selenium.",
-        "title": "Software testing & Growing Business needs",
-        "src": "/static/63a57b7109b1db7e54114918320316ae/994e1/TestingHero.png",
-        "reportName": "resume.pdf",
-        "pptName": "resume.pdf",
-        "thesisName": "resume.pdf"
-    },
-    {
-        "excerpt": "Software testing is imperative, as it controls the success rate and the growth of the business. I have gathered few business problems and tried answering the issues in this blogs, by focusing on Frontend Automated Testing using Selenium.",
-        "title": "Software testing & Growing Business needs",
-        "src": "/static/63a57b7109b1db7e54114918320316ae/994e1/TestingHero.png",
-        "reportName": "resume.pdf",
-        "pptName": "resume.pdf",
-        "thesisName": "resume.pdf"
+        "excerpt": "Automated Toll Management System is designed to automatically allow vehicles to pass Toll Points without having to stop at all, eliminating the use of barricades that are used in all the Toll gates in India that result in a lot of jams, and wastage of fuel, not to mention time. Our proposed system keeps track of all the vehicles that pass through, recording the time, vehicle details etc.",
+        "title": "Automated Toll Management System",
+        "src": "be_thesis_img.png",
+        "reportName": "BE_Thesis.pdf",
+        "pptName": "BE_Thesis_Presentation.pptx",
+        "thesisName": "BE_Thesis.pdf"
     }
 ]

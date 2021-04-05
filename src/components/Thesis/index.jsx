@@ -28,7 +28,7 @@ const Thesis = (props) => {
 
             <div className={style.linksHolder}>
               <a href={`../${props.reportName}`} download target="_blank">Download Report</a>
-              <a href={`../${props.pptName}`} download target="_blank">Download PPT</a>
+              <a href={`../${props.pptName}`} download target="_blank">Download Presentation</a>
               <a href={`../${props.thesisName}`} download target="_blank">Download Thesis</a>
             </div>
             {/* <p style={{ color: '#ce6d96', wordSpacing: '10px' }}>
